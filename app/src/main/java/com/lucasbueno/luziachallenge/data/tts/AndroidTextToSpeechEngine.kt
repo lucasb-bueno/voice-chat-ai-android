@@ -15,12 +15,16 @@ class AndroidTextToSpeechEngine(
 ) : VoiceSynthesizer {
 
     private val readiness = CompletableDeferred<Boolean>()
-    private val textToSpeech: TextToSpeech = TextToSpeech(context) { status ->
-        if (status == TextToSpeech.SUCCESS) {
-            textToSpeech.language = Locale.getDefault()
-            readiness.complete(true)
-        } else {
-            readiness.complete(false)
+    private lateinit var textToSpeech: TextToSpeech
+
+    init {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                textToSpeech.language = Locale.getDefault()
+                readiness.complete(true)
+            } else {
+                readiness.complete(false)
+            }
         }
     }
 
@@ -33,14 +37,18 @@ class AndroidTextToSpeechEngine(
     }
 
     override fun stop() {
-        textToSpeech.stop()
+        if (::textToSpeech.isInitialized) {
+            textToSpeech.stop()
+        }
     }
 
     override fun release() {
         if (!readiness.isCompleted) {
             readiness.complete(false)
         }
-        textToSpeech.stop()
-        textToSpeech.shutdown()
+        if (::textToSpeech.isInitialized) {
+            textToSpeech.stop()
+            textToSpeech.shutdown()
+        }
     }
 }

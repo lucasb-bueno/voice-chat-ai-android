@@ -3,12 +3,13 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    kotlin("kapt")
+    alias(libs.plugins.jetbrains.kotlin.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.lucasbueno.luziachallenge"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.lucasbueno.luziachallenge"
@@ -62,6 +63,7 @@ android {
 }
 
 dependencies {
+    ksp(libs.room.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -86,7 +88,6 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose.android)
-    kapt(libs.room.compiler)
 
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)

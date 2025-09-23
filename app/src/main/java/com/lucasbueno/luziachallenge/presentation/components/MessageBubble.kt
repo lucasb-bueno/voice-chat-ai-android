@@ -14,6 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.lucasbueno.luziachallenge.R
@@ -65,4 +66,20 @@ fun MessageBubble(
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun UserMessageBubblePreview() {
+    MessageBubble(
+        message = ChatMessageUiModel(
+            id = 1L,
+            author = com.lucasbueno.luziachallenge.domain.model.MessageAuthor.USER,
+            content = "Hello, how are you?",
+            timestamp = System.currentTimeMillis(),
+            isUser = true
+        ),
+        maxWidth = 300.dp,
+        modifier = Modifier.padding(8.dp)
+    )
 }
