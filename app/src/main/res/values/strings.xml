@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Luzia Challenge</string>
+    <string name="action_clear_history">Clear</string>
+    <string name="label_tts">Read replies aloud</string>
+    <string name="status_transcribing">Transcribing audio…</string>
+    <string name="status_responding">Waiting for AI response…</string>
+    <string name="status_speaking">Speaking response aloud…</string>
+    <string name="placeholder_empty_conversation">Record a message to start the conversation.</string>
+    <string name="content_description_start_recording">Start recording message</string>
+    <string name="content_description_stop_recording">Stop recording</string>
+    <string name="content_description_enable_tts">Enable text to speech</string>
+    <string name="content_description_disable_tts">Disable text to speech</string>
+    <string name="content_description_user_message">You said: %1$s</string>
+    <string name="content_description_assistant_message">Assistant replied: %1$s</string>
 </resources>
