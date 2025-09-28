@@ -64,6 +64,7 @@ android {
 
 dependencies {
     ksp(libs.room.compiler)
+    ksp(libs.moshi.kotlin.codegen)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -81,9 +82,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
 
     implementation(libs.retrofit)
-    implementation(libs.retrofit.converter.gson)
+    implementation(libs.retrofit.converter.moshi)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.moshi)
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
