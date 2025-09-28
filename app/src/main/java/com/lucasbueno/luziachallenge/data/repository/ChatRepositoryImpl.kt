@@ -1,7 +1,8 @@
 package com.lucasbueno.luziachallenge.data.repository
 
 import com.lucasbueno.luziachallenge.data.local.dao.ChatMessageDao
-import com.lucasbueno.luziachallenge.data.local.mapper.ChatMessageMapper
+import com.lucasbueno.luziachallenge.data.local.mapper.toDomain
+import com.lucasbueno.luziachallenge.data.local.mapper.toEntity
 import com.lucasbueno.luziachallenge.data.remote.api.OpenAiService
 import com.lucasbueno.luziachallenge.data.remote.dto.ChatCompletionMessageDto
 import com.lucasbueno.luziachallenge.data.remote.dto.ChatCompletionRequestDto
@@ -33,22 +34,26 @@ class ChatRepositoryImpl(
 ) : ChatRepository {
 
     override fun observeMessages(): Flow<List<ChatMessage>> {
-        return chatMessageDao.observeMessages().map { entities ->
-            entities.map(ChatMessageMapper::toDomain)
+        return chatMessageDao.getMessages().map { entities ->
+            entities.map { messageEntity ->
+                messageEntity.toDomain()
+            }
         }
     }
 
     override suspend fun saveMessage(message: ChatMessage) {
         withContext(dispatcher) {
-            chatMessageDao.insert(ChatMessageMapper.toEntity(message))
+            chatMessageDao.insertMessages(message.toEntity())
             enforceCacheLimit()
         }
     }
 
     override suspend fun saveMessages(messages: List<ChatMessage>) {
         withContext(dispatcher) {
-            val entities = messages.map(ChatMessageMapper::toEntity)
-            chatMessageDao.insertAll(entities)
+            val entities = messages.map { message ->
+                message.toEntity()
+            }
+            chatMessageDao.insertMessages(entities)
             enforceCacheLimit()
         }
     }

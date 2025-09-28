@@ -23,7 +23,7 @@ class AndroidAudioRecorder(
         stopRecorder()
         val directory = File(context.cacheDir, "recordings").apply { mkdirs() }
         val file = File.createTempFile("recording_", ".m4a", directory)
-        val mediaRecorder = MediaRecorder().apply {
+        val mediaRecorder = MediaRecorder(context).apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
             setAudioEncoder(MediaRecorder.AudioEncoder.AAC)

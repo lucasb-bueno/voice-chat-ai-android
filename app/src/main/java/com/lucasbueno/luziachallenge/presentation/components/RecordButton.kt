@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun RecordButton(
@@ -17,7 +18,11 @@ fun RecordButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val icon: ImageVector = if (isRecording) Icons.Outlined.StopCircle else Icons.Outlined.Mic
+    val icon: ImageVector = if (isRecording) {
+        Icons.Outlined.StopCircle
+    } else {
+        Icons.Outlined.Mic
+    }
     FloatingActionButton(
         onClick = onClick,
         modifier = modifier,
@@ -37,4 +42,24 @@ fun RecordButton(
             contentDescription = contentDescription
         )
     }
+}
+
+@Preview
+@Composable
+fun RecordButtonRecordingPreview() {
+    RecordButton(
+        isRecording = true,
+        contentDescription = "",
+        onClick = {}
+    )
+}
+
+@Preview
+@Composable
+fun RecordButtonNotRecordingPreview() {
+    RecordButton(
+        isRecording = false,
+        contentDescription = "",
+        onClick = {}
+    )
 }

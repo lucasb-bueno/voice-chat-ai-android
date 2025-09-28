@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun StatusBadge(
@@ -23,5 +24,13 @@ fun StatusBadge(
             disabledContainerColor = MaterialTheme.colorScheme.secondaryContainer,
             disabledLabelColor = MaterialTheme.colorScheme.onSecondaryContainer
         )
+    )
+}
+
+@Preview
+@Composable
+fun StatusBadgePreview() {
+    StatusBadge(
+        text =  "Transcribing audio..."
     )
 }

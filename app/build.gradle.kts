@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.lucasbueno.luziachallenge"
-        minSdk = 24
+        minSdk = 31
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
