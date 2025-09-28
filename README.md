@@ -46,6 +46,7 @@ Key technologies:
    ```
 
 3. **Run the app** from Android Studio (Device/Emulator with microphone access). When prompted, grant the microphone permission to enable audio recording.
+   **If using Emulator, remember to grant access to microphone through Extend Controls -> Microphone -> Enable "Virtual Microphone uses host audio input"**
 
 ## Feature overview
 
