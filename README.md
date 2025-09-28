@@ -24,7 +24,7 @@ Key technologies:
 - **Retrofit + OkHttp**: OpenAI transcription and chat completion endpoints with an authorization interceptor.
 - **Room**: Persists chat history with a configurable maximum cache size.
 - **Jetpack Compose**: Accessible, responsive conversation UI with TalkBack-friendly semantics.
-- **Media APIs**: `MediaRecorder` for voice capture and Android `TextToSpeech` for playback (bonus requirement).
+- **Media APIs**: `MediaRecorder` for voice capture and Android `TextToSpeech` for playback.
 
 ## Getting started
 
@@ -77,6 +77,3 @@ Key technologies:
 - Message content descriptions differentiate between user and assistant messages for TalkBack.
 - UI controls provide descriptive labels and adapt to different widths, ensuring legibility and focus order.
 
-## License
-
-This project is provided as part of the Luzia Android technical challenge.

@@ -16,8 +16,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -152,24 +155,39 @@ private fun ChatBottomBar(
     onToggleTts: (Boolean) -> Unit,
     recordContentDescription: String
 ) {
+    val disableTextToSpeechLabel = stringResource(id = R.string.content_description_disable_tts)
+    val enableTextToSpeechLabel = stringResource(id = R.string.content_description_enable_tts)
+
     Surface(shadowElevation = 4.dp) {
-        val disableTextToSpeechLabel = stringResource(id = R.string.content_description_disable_tts)
-        val enableTextToSpeechLabel = stringResource(id = R.string.content_description_enable_tts)
-        BottomAppBar(
-            actions = {
+        BottomAppBar {
+            BoxWithConstraints(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                val useIcon = maxWidth < 360.dp
+
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                    modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            text = stringResource(id = R.string.label_tts),
-                            style = MaterialTheme.typography.bodyLarge
-                        )
-                        Spacer(modifier = Modifier.width(12.dp))
+                        if (useIcon) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.VolumeUp,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onSurface
+                            )
+                        } else {
+                            Text(
+                                text = stringResource(id = R.string.label_tts),
+                                style = MaterialTheme.typography.bodyLarge
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.width(8.dp))
+
                         Switch(
                             checked = isTtsEnabled,
                             onCheckedChange = onToggleTts,
@@ -182,6 +200,7 @@ private fun ChatBottomBar(
                             }
                         )
                     }
+
                     RecordButton(
                         isRecording = isRecording,
                         contentDescription = recordContentDescription,
@@ -189,7 +208,7 @@ private fun ChatBottomBar(
                     )
                 }
             }
-        )
+        }
     }
 }
 
