@@ -1,4 +1,4 @@
-package com.lucasbueno.luziachallenge.presentation.di
+package com.lucasbueno.luziachallenge.di
 
 import com.lucasbueno.luziachallenge.domain.usecase.ClearChatUseCase
 import com.lucasbueno.luziachallenge.domain.usecase.ObserveChatUseCase

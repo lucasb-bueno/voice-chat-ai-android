@@ -1,4 +1,4 @@
-package com.lucasbueno.luziachallenge.presentation.di
+package com.lucasbueno.luziachallenge.di
 
 import com.lucasbueno.luziachallenge.data.remote.api.OpenAiService
 import com.lucasbueno.luziachallenge.data.remote.interceptor.AuthInterceptor

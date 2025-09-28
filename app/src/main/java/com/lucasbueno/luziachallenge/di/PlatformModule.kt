@@ -1,4 +1,4 @@
-package com.lucasbueno.luziachallenge.presentation.di
+package com.lucasbueno.luziachallenge.di
 
 import com.lucasbueno.luziachallenge.data.audio.AndroidAudioRecorder
 import com.lucasbueno.luziachallenge.data.tts.AndroidTextToSpeechEngine

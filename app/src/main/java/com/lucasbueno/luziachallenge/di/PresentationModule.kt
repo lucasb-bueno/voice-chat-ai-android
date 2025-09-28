@@ -1,4 +1,4 @@
-package com.lucasbueno.luziachallenge.presentation.di
+package com.lucasbueno.luziachallenge.di
 
 import com.lucasbueno.luziachallenge.presentation.chat.ChatViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
