@@ -9,10 +9,10 @@ app/
  └── src/main/java/com/lucasbueno/luziachallenge
      ├── data        # DTOs, Retrofit service, Room database, repository implementation
      ├── domain      # Pure Kotlin models, repository interface, and use cases
+     ├── di          # Koin modules
      └── presentation
          ├── chat    # ViewModel, UI state, composable screens and navigation
          ├── components # Reusable Compose components
-         ├── di      # Koin modules
          └── MainActivity & Application bootstrap
 ```
 
