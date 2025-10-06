@@ -2,6 +2,8 @@
 
 An Android voice-to-AI chat sample implemented with a clean architecture stack, Jetpack Compose UI, Koin dependency injection, Retrofit networking, and Room-based caching.
 
+[Screen_recording_20251006_202712.webm](https://github.com/user-attachments/assets/322386a5-e4e7-41d7-b838-ed560ac68333)
+
 ## Project structure
 
 ```
