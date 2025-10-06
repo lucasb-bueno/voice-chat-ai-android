@@ -6,7 +6,7 @@ An Android voice-to-AI chat sample implemented with a clean architecture stack, 
 
 ```
 app/
- └── src/main/java/com/lucasbueno/luziachallenge
+ └── src/main/java/com/lucasbueno/voiceaichat
      ├── data        # DTOs, Retrofit service, Room database, repository implementation
      ├── domain      # Pure Kotlin models, repository interface, and use cases
      ├── di          # Koin modules

@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".presentation.LuziaChallengeApplication"
+        android:name=".presentation.VoiceAIChatApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,13 +14,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LuziaChallenge"
+        android:theme="@style/Theme.VoiceAIChat"
         tools:targetApi="31">
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LuziaChallenge">
+            android:theme="@style/Theme.VoiceAIChat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

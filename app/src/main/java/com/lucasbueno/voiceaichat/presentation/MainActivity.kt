@@ -8,14 +8,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.lucasbueno.voiceaichat.presentation.chat.ChatRoute
-import com.lucasbueno.voiceaichat.ui.theme.LuziaChallengeTheme
+import com.lucasbueno.voiceaichat.ui.theme.VoiceAIChatTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            LuziaChallengeTheme {
+            VoiceAIChatTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     ChatRoute()
                 }

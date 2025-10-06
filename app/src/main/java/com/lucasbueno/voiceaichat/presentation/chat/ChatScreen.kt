@@ -45,7 +45,7 @@ import com.lucasbueno.voiceaichat.domain.model.MessageAuthor
 import com.lucasbueno.voiceaichat.presentation.components.MessageBubble
 import com.lucasbueno.voiceaichat.presentation.components.RecordButton
 import com.lucasbueno.voiceaichat.presentation.components.StatusBadge
-import com.lucasbueno.voiceaichat.ui.theme.LuziaChallengeTheme
+import com.lucasbueno.voiceaichat.ui.theme.VoiceAIChatTheme
 
 @Composable
 fun ChatScreen(
@@ -256,7 +256,7 @@ private fun MessageList(
 @Preview
 @Composable
 private fun ChatScreenPreview() {
-    LuziaChallengeTheme {
+    VoiceAIChatTheme {
         ChatScreen(
             state = ChatUiState(
                 messages = listOf(

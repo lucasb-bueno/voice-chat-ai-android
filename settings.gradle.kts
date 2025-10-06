@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Luzia Challenge"
+rootProject.name = "Voice AI Chat"
 include(":app")

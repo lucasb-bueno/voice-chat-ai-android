@@ -11,12 +11,12 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 
-class LuziaChallengeApplication : Application() {
+class VoiceAIChatApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
             androidLogger(Level.INFO)
-            androidContext(this@LuziaChallengeApplication)
+            androidContext(this@VoiceAIChatApplication)
             modules(
                 listOf(
                     networkModule,

@@ -12,7 +12,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.lucasbueno.luziachallenge"
+        applicationId = "com.lucasbueno.voiceaichat"
         minSdk = 31
         targetSdk = 35
         versionCode = 1
