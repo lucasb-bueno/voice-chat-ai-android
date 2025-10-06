@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.lucasbueno.luziachallenge"
+    namespace = "com.lucasbueno.voiceaichat"
     compileSdk = 36
 
     defaultConfig {

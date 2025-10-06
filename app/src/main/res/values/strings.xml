@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Luzia Challenge</string>
+    <string name="app_name">Voice AI Chat</string>
     <string name="action_clear_history">Clear</string>
     <string name="label_tts">Read replies aloud</string>
     <string name="status_transcribing">Transcribing audio…</string>
