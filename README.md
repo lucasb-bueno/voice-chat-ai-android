@@ -1,4 +1,4 @@
-# Luzia Android Challenge
+# Voice Chat AI Android
 
 An Android voice-to-AI chat sample implemented with a clean architecture stack, Jetpack Compose UI, Koin dependency injection, Retrofit networking, and Room-based caching.
 
@@ -56,12 +56,6 @@ Key technologies:
 - **TalkBack support**: Message bubbles, toggles, and status badges expose descriptive content for screen readers.
 - **Responsive UI**: Message widths scale with available space; status badges and scaffold adapt to phones or larger devices.
 - **Text-to-Speech**: Optional playback of assistant replies through the `AndroidTextToSpeechEngine` and `SpeakTextUseCase`.
-
-## Assumptions
-
-- OpenAI endpoints are reachable and require a bearer token supplied via the provided API key.
-- Whisper audio uploads accept the recorded `.m4a` format created by `MediaRecorder`.
-- Minimal error UI (snackbars) is acceptable for initial delivery.
 
 ## Potential improvements
 
